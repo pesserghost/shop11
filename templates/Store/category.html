@@ -1,0 +1,24 @@
+{% extends 'Store/main.html' %}
+
+{% block sarlavha %}
+Savatcha| {{block.super}}
+{% endblock sarlavha %}
+
+{% block content %}
+{% load static %}
+
+<h1 class="text-white">
+    {{ category.name }}
+</h1>
+
+<h2 class="text-white">
+    Mahsulotlar:
+</h2>
+
+{% for product in products %}
+<h3 class="text-white">
+    {{ product.name }}
+</h3>
+{% endfor %}
+
+{% endblock content %}

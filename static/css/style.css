@@ -1,0 +1,247 @@
+
+.d-flex{
+    padding-left: 60px;
+}
+
+.d{
+    border-color: #F4CA16;
+    color: #F4CA16;
+}
+
+.mb-0{
+    padding-top: 20px;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: sub;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #898989; }
+
+.icon.icon-search {
+    mask-image: url("../images/icons/search.svg");
+    -webkit-mask-image: url("../images/icons/search.svg"); }
+.icon.icon-basket {
+    mask-image: url("../images/icons/shopping-cart.svg");
+    -webkit-mask-image: url("../images/icons/shopping-cart.svg"); }
+.icon.icon-togle {
+    mask-image: url("../images/icons/controls.png");
+    -webkit-mask-image: url("../images/icons/controls.png"); }
+
+
+body .navbar .navbar-brand p {
+    font-size: 11px; }
+body .navbar .input-group {
+    width: 300px;
+    margin-left: 40px; }
+body .navbar .input-group input, body .navbar .input-group button {
+    background-color: #f1f1f1; }
+
+
+body{
+   background-color: #193549; 
+   min-height: 100vh;
+}
+
+header, header nav{
+    background-color: #122738;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-nav{
+    align-items: center;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+
+.logo-nav{
+    text-decoration: none;
+    font-size: 3vw;
+    font-weight: 700;
+    color: #F4CA16;
+}
+
+.logo-nav:hover{
+    color: #F4CA16;
+}
+
+.logo-nav__word{
+    color: #F07427;
+}
+
+
+.nav-item a{
+    color: #F4CA16;
+    font-size: 22px;
+    font-weight: 600;
+}
+.shopping{
+    margin-left: 50px;
+    background-color: #F07427;
+    width: 30px;
+    height: 30px;
+}
+
+.shopping-box{
+    display: flex;
+    position: relative;
+}
+
+.badge{
+    position: absolute;
+    right: -10px;
+    top: -5px;
+}
+.dropdown-st{
+    padding: 0 10px;
+}
+.dropdown-st:hover{
+    text-decoration: none;
+}
+.dropdown-menu{
+    background-color: #193549;
+}
+
+
+/******************************** CAROUSEL STYLE *******************************/
+
+main section .carousel .carousel-inner .carousel-item .carousel-layer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6); }
+main section .carousel .carousel-inner .carousel-item .carousel-layer h3 {
+      margin-right: 35%;
+      font-size: 3vw; 
+      color: #F4CA16;
+      font-weight: 700;
+}
+main section .carousel .carousel-indicators li {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid #fff;
+    opacity: 1; }
+main section .carousel .carousel-indicators li.active {
+      background-color: #fff;
+      border: none;
+      width: 15px;
+      height: 15px; }
+
+
+
+/**************************************** MAIN STYLE **************************/
+
+#items .items-h2{
+    text-align: center;
+    font-size: 4vw;
+    margin: 50px 0;
+    color: #F4CA16;
+    font-weight: 700;
+}
+.row{
+    justify-content: space-around;
+}
+
+.card:hover .card__img{
+    transform: scale(1.05);
+    transition: .6s;
+}
+
+.card{
+
+    padding: 15px;
+    background-color: #193549;
+    border: 0;
+}
+
+
+
+.card__img{
+    height: 100%;
+    
+}
+
+.card-header{
+    padding: 0;
+    overflow: hidden;
+    height: 250px;
+    
+}
+
+.btn{
+    color: #fff;
+}
+
+.hhh{
+    color:#F4CA16
+    
+
+}
+
+
+.card-body{
+    background-color: rgb(21, 46, 95);
+}
+.card-bodyy{
+    background-color: rgb(21, 46, 95);
+}
+
+.card__p{
+    color: #F4CA16;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card__h6{
+    text-align: center;
+    color: #F4CA16;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+
+
+.dropdown-menu{
+    border-radius: 3%;
+    background-color: #122738;
+    border: 0;
+    margin-top: 14px;
+}
+
+ .dropdown-toggle:hover{
+    background-color: #122738;
+    border: 0;
+    color: #F4CA16;
+ }
+ .dropdown-toggle::after{
+    background-color: #122738;
+    border: 0;
+    color: #F4CA16;
+ }
+ .dropdown-toggle::before{
+    background-color: #122738;
+    border: 0;
+    color: #F4CA16;
+ }
+
+  .oq{
+    color: rgb(255, 251, 5);
+  }
+  
+ 
+ 

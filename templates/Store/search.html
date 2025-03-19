@@ -1,0 +1,137 @@
+{% extends 'Store/main.html' %}
+
+{% block sarlavha %}
+Bosh sahifa| {{block.super}}
+{% endblock sarlavha %}
+
+{% block content %}
+
+{% load static %}
+
+    <main>
+        <section>
+            <div class="carousel slide" id="karusel" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li class="active" data-target="#karusel" data-slide-to="0"></li>
+                    <li data-target="#karusel" data-slide-to="1"></li>
+                    <li data-target="#karusel" data-slide-to="2"></li>
+                    <li data-target="#karusel" data-slide-to="3"></li>
+                </ul>
+        
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{%static 'images/2.png'%}" class="w-100 carousel-item__img" alt="">
+                        <div class="carousel-layer position-absolute d-flex justify-content-end align-items-center">
+                            <h3 class="text-bold">BIZDAN BARCHASINI ARZON, SIFATLI VA HAMYONBOP NARXLARDA<br> XARID QILING</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        
+                        <img src="{%static 'images/1.jpg'%}" class="w-100" alt="">
+                        <div class="carousel-layer position-absolute d-flex justify-content-end align-items-center">
+                            <h3 class="text-bold">BIZDAN BARCHASINI ARZON, SIFATLI VA HAMYONBOP NARXLARDA<br> XARID QILING</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{%static 'images/3.webp'%}" class="w-100" alt="">
+                        <div class="carousel-layer position-absolute d-flex justify-content-end align-items-center">
+                            <h3 class="text-bold">BIZDAN BARCHASINI ARZON, SIFATLI VA HAMYONBOP NARXLARDA <br> XARID QILING</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{%static 'images/4.png'%}" class="w-100" alt="">
+                        <div class="carousel-layer position-absolute d-flex justify-content-end align-items-center">
+                            <h3 class="text-bold">BIZDAN BARCHASINI ARZON, SIFATLI VA HAMYONBOP NARXLARDA <br> XARID QILING</h3>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+        <section id="items">
+            <div class="container">
+                
+                <h2 class="items-h2">Siz qidirgan Mahsulotlar</h2>
+                
+                <div class="row">
+                    
+                        {% for product in products %}
+                        <div class="col-xl-3 col-md-6 col-lg-4 card">
+                        <div class="card-header">
+                                <img class="card__img card-img-top" src="{{product.image.url}}" alt="">
+                        </div>
+                            <div class="card-body">
+                                <p class="card__p">{{product.name}}</p>
+                                <button data-product={{product.id}} data-action="add" type="button" onclick="addBadge()" class="btn btn-outline-warning btn-block update-cart">Savatga qushish</button>
+                                <a href="/product-detail/{{product.id}}" class="btn btn-outline-success btn-block">Tavsif</a>
+                                
+                                <h6 class="card__h6"><span class="card__h6--prace">{{product.price|floatformat:2}}</span> {{product.price_type}}</h6>
+                            </div>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="pag">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if products.has_previous %}
+                    
+              
+                    
+                <li class="page-item">
+                  <a class="page-link" href="?page={{products.previous_page_number}}" aria-label="Orqaga">
+                    <span aria-hidden="true" class="kk">Oldingi</span>
+                  </a>
+                </li>
+                {% else %}
+                   <li class="page-item">
+                    <a class="page-link" href="index" aria-label="Barcha malumotlar shu">
+                      <span aria-hidden="true" class="kk">&lt;</span>
+                    </a>
+                 </li>
+                  {% endif %}
+                <li class="page-item active"><a class="page-link" href="?page={{products.number}}">{{products.number}}</a></li>
+            
+             
+                {% if products.has_next %}
+                    
+                
+                    
+                 <li class="page-item">
+                   <a class="page-link" href="?page={{products.next_page_number}}" aria-label="Oldinga">
+                     <span aria-hidden="true" class="kk">Keyingi</span>
+                   </a>
+                </li>
+                   {% else %}
+                   <li class="page-item">
+                    <a class="page-link" href="index" aria-label="Barcha malumotlar shu">
+                      <span class="kk" aria-hidden="true">&gt</span>
+                    </a>
+                 </li>
+                {% endif %}
+            </ul>
+          </nav>
+    
+       </div>
+       <style>
+        .kk{
+            color:#193549 ;
+        }
+        
+           .pag{
+               display: flex;
+               justify-content: center;
+               margin-top: 10px;
+           }
+       </style>
+{%endblock content%}
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Registratsiya</title>
+      <link rel="stylesheet" href="../../static/css/register.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="content">
+         <div class="text">
+            Ro'yxatdan o'tish
+         </div>
+         <form method="post">
+            {%csrf_token%}
+            <div class="alert mb-3">
+            {% for message in messages  %}
+          
+       
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                
+           
+                
+             <div class="alert alert-success" role="alert">
+                 {{message}}
+               </div>
+               {% endif %}
+               {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                
+           
+                
+               <div class="alert alert-warning" role="alert">
+                   {{message}}
+                 </div>
+                 {% endif %}
+                 {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                
+           
+                
+                 <div class="alert alert-info" role="alert">
+                     {{message}}
+                   </div>
+                   {% endif %}
+               {% endfor %}
+            </div>
+          <div class="field feld">
+            <input type="text" name="name" required>
+            <span class="fas fa-user"></span>
+            <label>Foydalanuvchi nomini</label>
+         </div>
+            <div class="field feld">
+               <input type="email" name="email" required>
+               <span class="fas fa-envelope"></span>
+               <label for="email">Emailingizni kiriting</label>
+            </div>
+            <div class="field">
+               <input type="password" name="psw" required>
+               <span class="fas fa-lock"></span>
+               <label>Parol yarating</label>
+            </div>
+            <div class="field use">
+              <input type="password" name="psw2" required>
+              <span class="fas fa-lock"></span>
+              <label>Parolni takrorlang</label>
+           </div>
+          
+            <button>Ro'yxatdan o'tish</button>
+            <div class="sign-up">
+               Avval ro'yxatdan o'tganmisiz?
+               <a href="login">Hoziroq kiring!</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>

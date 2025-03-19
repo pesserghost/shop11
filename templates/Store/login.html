@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/login.css">
+    
+    <title>Kirish</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="content">
+         <div class="text">
+           Kirish
+         </div>
+         <form method="post">
+            {%csrf_token%}
+            <div class="alert mb-3">
+            {% for message in messages  %}
+          
+       
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                
+           
+                
+             <div class="alert alert-success" role="alert">
+                 {{message}}
+               </div>
+               {% endif %}
+               {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                
+           
+                
+               <div class="alert alert-warning" role="alert">
+                   {{message}}
+                 </div>
+                 {% endif %}
+                 {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                
+           
+                
+                 <div class="alert alert-info" role="alert">
+                     {{message}}
+                   </div>
+                   {% endif %}
+               {% endfor %}
+            </div>
+            
+            <div class="field feld">
+               <input type="text" name="name" required>
+               <span class="fas fa-user"></span>
+               <label for="username">Foydalanuvchi nomi</label>
+            </div>
+            <div class="field">
+               <input type="password"  name="psw" required>
+               <span class="fas fa-lock"></span>
+               <label for="password">Parolingizni kiriting</label>
+            </div>
+            <div class="forgot-pass">
+               <a href="#">Parolni unutdingizmi?</a>
+            </div>
+            <button>Sign in</button>
+            <div class="sign-up">
+                Avval ro'yxatdan o'tmaganmisiz?
+               <a href="register">Hoziroq ro'yxatdan o'ting!</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
